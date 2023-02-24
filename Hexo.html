@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Hexo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Kerangka Kerja Django RESTMengenal Kerangka Kerja Django RESTKerangka kerja Django REST adalah perangkat yang kuat dan fleksibel untuk membangun API Web. Beberapa alasan Kamu mungkin ingin menggunakan">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/Hexo.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Kerangka Kerja Django RESTMengenal Kerangka Kerja Django RESTKerangka kerja Django REST adalah perangkat yang kuat dan fleksibel untuk membangun API Web. Beberapa alasan Kamu mungkin ingin menggunakan">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201313920-35f72cac-a0e6-473d-9323-0038aa293a80.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201313957-09f54748-9cc3-4d7e-ba3f-843788d4c948.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201313993-b36d6190-3f2d-4b90-83a5-9adcacb4fbea.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314019-f29e209a-182c-4337-bf69-5e3e5f08de2e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314052-85c8282d-38d6-43b6-bb9d-7169cde6e903.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314079-95254eee-d03a-4f65-97fc-57ce0b600090.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314482-290c1192-f799-46a5-9caf-45f7e87d9bc6.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314504-6a662326-5e69-4739-978d-d9c427be0125.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314548-84114709-90cc-4093-b7fc-1cf2ff4f7203.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314590-05aa8c7c-e0ed-45fa-8abf-a886c2945fd8.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314850-34e5d772-bb97-435b-b11d-b9938e446563.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314922-f6686d47-ead2-4493-a15f-7c0e6ecf0ae8.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201314963-70710e1f-8fc8-4739-aa14-88f542c878d0.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201315593-01f3b58d-97c4-4e76-b04f-d1a376b2be4e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201315624-ebc0ea44-763f-40f8-a1ba-f95d4c944aa2.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201315654-282e66cd-1eb9-47c9-bc0a-87d90e902213.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201315681-a4f6c8ec-30df-4d2a-aafb-bfb0fb57c762.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317057-700e1c5e-a7b7-417a-9b4d-baff9d7881bd.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317096-67eb0e59-ea74-4024-a03b-140b2a2efe55.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317115-88939c14-f4ad-43be-b679-8a15b27c1204.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317155-726e5ea7-7d01-4de8-92f3-60c1e0f13f3b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317196-62b8fe12-8fa0-4c77-9b3c-2b5c34c0fc5b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317592-95da132e-4473-4f70-bbb9-fa8a546537de.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201317635-5014c748-57e7-45df-a622-0e44f807edc7.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201318114-1528f47f-0bcf-4cbf-a3db-e94181712450.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201318154-ad7366db-f849-4a7e-a37f-f2993eee950c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201318192-cc7c3030-cac0-42f1-b431-be5432338d21.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201319686-58d9e367-3ffd-40c1-91f3-cf89b3850ec9.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201319714-73d8dbd4-52eb-4368-8538-f2c59383f04f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201319754-20240efe-70ec-4f4a-8a58-4c3cb499737a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320231-0b3a0186-89de-465b-9cf8-24f5e4256a9c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320269-2f322921-1d06-4435-b056-3186da5db0ff.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320290-dc603be5-32f6-4d06-9275-ed0e91bcfb14.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320325-ff352092-22dd-499e-a3cb-5f603babb7a4.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320359-125b762c-72fa-4e99-a300-3eb43e39fc91.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320401-8d90dfa2-b9bc-486d-9051-a4c92edf521b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/114823510/201320444-609df02f-060a-4872-b26a-804e29fd8e2e.png">
+<meta property="article:published_time" content="2023-02-24T16:07:25.000Z">
+<meta property="article:modified_time" content="2023-02-24T09:10:56.651Z">
+<meta property="article:author" content="Hexo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/114823510/201313920-35f72cac-a0e6-473d-9323-0038aa293a80.png">
+  
+  
+  
+  <title>Hexo - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h1 id="Kerangka-Kerja-Django-REST"><a href="#Kerangka-Kerja-Django-REST" class="headerlink" title="Kerangka Kerja Django REST"></a><strong>Kerangka Kerja Django REST</strong></h1><h2 id="Mengenal-Kerangka-Kerja-Django-REST"><a href="#Mengenal-Kerangka-Kerja-Django-REST" class="headerlink" title="Mengenal Kerangka Kerja Django REST"></a><strong>Mengenal Kerangka Kerja Django REST</strong></h2><p>Kerangka kerja Django REST adalah perangkat yang kuat dan fleksibel untuk membangun API Web.</p>
+<p>Beberapa alasan Kamu mungkin ingin menggunakan kerangka REST:</p>
+<ul>
+<li>API yang dapat dijelajahi Web adalah keuntungan kegunaan yang sangat besar bagi pengembang.</li>
+<li>Kebijakan autentikasi termasuk paket untuk OAuth1a dan OAuth2 .</li>
+<li>Serialisasi yang mendukung sumber data ORM dan non-ORM .</li>
+<li>Dapat disesuaikan sepenuhnya - cukup gunakan tampilan berbasis fungsi biasa jika Kamu tidak memerlukan fitur yang lebih canggih .</li>
+<li>Dokumentasi yang luas, dan dukungan komunitas yang luar biasa .</li>
+<li>Digunakan dan dipercaya oleh perusahaan yang diakui secara internasional termasuk Mozilla , Red Hat , Heroku , dan Eventbrite .</li>
+</ul>
+<h2 id="Lingkungan-Django-REST-framework"><a href="#Lingkungan-Django-REST-framework" class="headerlink" title="Lingkungan Django REST framework"></a><strong>Lingkungan Django REST framework</strong></h2><ul>
+<li>Menginstal Kerangka Kerja Django dan Django REST</li>
+<li>Membuat Project</li>
+<li>Membuat App</li>
+<li>Mengatur Autentikasi</li>
+<li>Membuat Serializers</li>
+<li>Membuat Views</li>
+<li>Mengatur Urls Project</li>
+<li>Mengatur REST framework dan Installed Apps</li>
+<li>Menguji API</li>
+</ul>
+<h2 id="Menginstal-Kerangka-Kerja-Django-dan-Django-REST"><a href="#Menginstal-Kerangka-Kerja-Django-dan-Django-REST" class="headerlink" title="Menginstal Kerangka Kerja Django dan Django REST"></a><strong>Menginstal Kerangka Kerja Django dan Django REST</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201313920-35f72cac-a0e6-473d-9323-0038aa293a80.png" srcset="/img/loading.gif" lazyload alt="00"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201313957-09f54748-9cc3-4d7e-ba3f-843788d4c948.png" srcset="/img/loading.gif" lazyload alt="01"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201313993-b36d6190-3f2d-4b90-83a5-9adcacb4fbea.png" srcset="/img/loading.gif" lazyload alt="02"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314019-f29e209a-182c-4337-bf69-5e3e5f08de2e.png" srcset="/img/loading.gif" lazyload alt="03"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314052-85c8282d-38d6-43b6-bb9d-7169cde6e903.png" srcset="/img/loading.gif" lazyload alt="04"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314079-95254eee-d03a-4f65-97fc-57ce0b600090.png" srcset="/img/loading.gif" lazyload alt="05"></p>
+<h2 id="Membuat-Project"><a href="#Membuat-Project" class="headerlink" title="Membuat Project"></a><strong>Membuat Project</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201314482-290c1192-f799-46a5-9caf-45f7e87d9bc6.png" srcset="/img/loading.gif" lazyload alt="06"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314504-6a662326-5e69-4739-978d-d9c427be0125.png" srcset="/img/loading.gif" lazyload alt="07"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314548-84114709-90cc-4093-b7fc-1cf2ff4f7203.png" srcset="/img/loading.gif" lazyload alt="08"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314590-05aa8c7c-e0ed-45fa-8abf-a886c2945fd8.png" srcset="/img/loading.gif" lazyload alt="09"></p>
+<h2 id="Membuat-App"><a href="#Membuat-App" class="headerlink" title="Membuat App"></a><strong>Membuat App</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201314850-34e5d772-bb97-435b-b11d-b9938e446563.png" srcset="/img/loading.gif" lazyload alt="10"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314922-f6686d47-ead2-4493-a15f-7c0e6ecf0ae8.png" srcset="/img/loading.gif" lazyload alt="11"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201314963-70710e1f-8fc8-4739-aa14-88f542c878d0.png" srcset="/img/loading.gif" lazyload alt="12"></p>
+<h2 id="Mengatur-Autentikasi"><a href="#Mengatur-Autentikasi" class="headerlink" title="Mengatur Autentikasi"></a><strong>Mengatur Autentikasi</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201315593-01f3b58d-97c4-4e76-b04f-d1a376b2be4e.png" srcset="/img/loading.gif" lazyload alt="13"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201315624-ebc0ea44-763f-40f8-a1ba-f95d4c944aa2.png" srcset="/img/loading.gif" lazyload alt="14"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201315654-282e66cd-1eb9-47c9-bc0a-87d90e902213.png" srcset="/img/loading.gif" lazyload alt="15"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201315681-a4f6c8ec-30df-4d2a-aafb-bfb0fb57c762.png" srcset="/img/loading.gif" lazyload alt="16"></p>
+<h2 id="Membuat-Serializers"><a href="#Membuat-Serializers" class="headerlink" title="Membuat Serializers"></a><strong>Membuat Serializers</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201317057-700e1c5e-a7b7-417a-9b4d-baff9d7881bd.png" srcset="/img/loading.gif" lazyload alt="17"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201317096-67eb0e59-ea74-4024-a03b-140b2a2efe55.png" srcset="/img/loading.gif" lazyload alt="18"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201317115-88939c14-f4ad-43be-b679-8a15b27c1204.png" srcset="/img/loading.gif" lazyload alt="19"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201317155-726e5ea7-7d01-4de8-92f3-60c1e0f13f3b.png" srcset="/img/loading.gif" lazyload alt="20"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201317196-62b8fe12-8fa0-4c77-9b3c-2b5c34c0fc5b.png" srcset="/img/loading.gif" lazyload alt="21"></p>
+<h2 id="Membuat-Views"><a href="#Membuat-Views" class="headerlink" title="Membuat Views"></a><strong>Membuat Views</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201317592-95da132e-4473-4f70-bbb9-fa8a546537de.png" srcset="/img/loading.gif" lazyload alt="22"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201317635-5014c748-57e7-45df-a622-0e44f807edc7.png" srcset="/img/loading.gif" lazyload alt="23"></p>
+<h2 id="Mengatur-Urls-Project"><a href="#Mengatur-Urls-Project" class="headerlink" title="Mengatur Urls Project"></a><strong>Mengatur Urls Project</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201318114-1528f47f-0bcf-4cbf-a3db-e94181712450.png" srcset="/img/loading.gif" lazyload alt="24"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201318154-ad7366db-f849-4a7e-a37f-f2993eee950c.png" srcset="/img/loading.gif" lazyload alt="25"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201318192-cc7c3030-cac0-42f1-b431-be5432338d21.png" srcset="/img/loading.gif" lazyload alt="26"></p>
+<h2 id="Mengatur-REST-framework-dan-Installed-Apps"><a href="#Mengatur-REST-framework-dan-Installed-Apps" class="headerlink" title="Mengatur REST framework dan Installed Apps"></a><strong>Mengatur REST framework dan Installed Apps</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201319686-58d9e367-3ffd-40c1-91f3-cf89b3850ec9.png" srcset="/img/loading.gif" lazyload alt="27"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201319714-73d8dbd4-52eb-4368-8538-f2c59383f04f.png" srcset="/img/loading.gif" lazyload alt="28"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201319754-20240efe-70ec-4f4a-8a58-4c3cb499737a.png" srcset="/img/loading.gif" lazyload alt="29"></p>
+<h2 id="Menguji-API"><a href="#Menguji-API" class="headerlink" title="Menguji API"></a><strong>Menguji API</strong></h2><p><img src="https://user-images.githubusercontent.com/114823510/201320231-0b3a0186-89de-465b-9cf8-24f5e4256a9c.png" srcset="/img/loading.gif" lazyload alt="30"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201320269-2f322921-1d06-4435-b056-3186da5db0ff.png" srcset="/img/loading.gif" lazyload alt="31"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201320290-dc603be5-32f6-4d06-9275-ed0e91bcfb14.png" srcset="/img/loading.gif" lazyload alt="32"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201320325-ff352092-22dd-499e-a3cb-5f603babb7a4.png" srcset="/img/loading.gif" lazyload alt="33"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201320359-125b762c-72fa-4e99-a300-3eb43e39fc91.png" srcset="/img/loading.gif" lazyload alt="34"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201320401-8d90dfa2-b9bc-486d-9051-a4c92edf521b.png" srcset="/img/loading.gif" lazyload alt="35"></p>
+<p><img src="https://user-images.githubusercontent.com/114823510/201320444-609df02f-060a-4872-b26a-804e29fd8e2e.png" srcset="/img/loading.gif" lazyload alt="36"></p>
+<h1 id="Penutup"><a href="#Penutup" class="headerlink" title="Penutup"></a><strong>Penutup</strong></h1><p>Hai, aku Alpha Prima Galatheo Qallbu</p>
+<p>Aku seorang Information Security Analyst, juga Pendiri di komunitas 1337Syndicate, aku suka bahasa dan budaya Jepang.</p>
+
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
